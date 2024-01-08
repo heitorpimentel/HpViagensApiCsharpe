@@ -2,11 +2,26 @@
  Api usando linguagem C#
 
 ## Instruções de uso
-Se estiver usando o Visual Studio é só colocar para rodar na opção selecionada </br>
+#### Primeiro crie o banco de dados com o seguinte comando no seu MySQL
+```bash
+CREATE DATABASE hp_viagenscs
+```
+Após isso, se estiver usando o Visual Studio faça o seguinte
+- Clique em Ferramentas > Gerenciador de Pacotes do NuGet > Console do Gerenciador de Pacotes
+- E digite:
+```bash
+Update-Database
+```
+
 Se for usar o VS Code fará:
+- Terminal > Novo Terminal 
 ```bash
 cd HpViagensApiCsharpe
-#
+# Em seguida
+dotnet tool install --global dotnet-ef
+# Em seguida
+dotnet ef database update
+# Em seguida
 dotnet run
 ```
 Para que o uso da api seja eficiente, será necesário cadastrar Cliente, Viagem, Pagamento e por último uma reserva, pois reserva contém os dados das 3 tabelas, não sendo possível cadastrar algum dado sem antes existir. </br>
