@@ -28,3 +28,8 @@ Para que o uso da api seja eficiente, será necesário cadastrar Cliente, Viagem
 Poderá fazer uso da aplicação Next para o consumo desta API: [clique aqui para ver o repositório](https://github.com/heitorpimentel/hp-viagens-final.git)
 
 Para acessar o localhost da API use: https://localhost:7240/api/ -> Clientes, Pagamentos, Viagem ou Reservas e terá acesso aos dados cadastrados.
+## Modelagem do banco de dados
+### Modelo conceitual
+![image](https://github.com/heitorpimentel/HpViagensAPI/assets/130229709/dcd383a3-7d73-4d7f-8a3a-a9bb380bde1c)
+### Modelo lógico
+![image](https://github.com/heitorpimentel/HpViagensAPI/assets/130229709/17328a10-bcc2-405f-b70a-6057eaaed9c2)
