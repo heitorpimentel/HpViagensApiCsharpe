@@ -556,3 +556,4 @@ C:\Users\Administrator\Documents\Repositorios\HpViagensApiCsharpe\HpViagensApiCs
 C:\Users\Administrator\Documents\Repositorios\HpViagensApiCsharpe\HpViagensApiCsharpe\obj\Debug\net6.0\HpViagensApiCsharpe.pdb
 C:\Users\Administrator\Documents\Repositorios\HpViagensApiCsharpe\HpViagensApiCsharpe\obj\Debug\net6.0\HpViagensApiCsharpe.genruntimeconfig.cache
 C:\Users\Administrator\Documents\Repositorios\HpViagensApiCsharpe\HpViagensApiCsharpe\obj\Debug\net6.0\ref\HpViagensApiCsharpe.dll
+C:\Users\Administrator\Documents\Repositorios\HpViagensApiCsharpe\HpViagensApiCsharpe\obj\Debug\net6.0\HpViagensApiCsharpe.sourcelink.json
