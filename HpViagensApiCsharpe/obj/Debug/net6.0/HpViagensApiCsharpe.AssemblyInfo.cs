@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("HpViagensApiCsharpe")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5283f3171b3a920dd597d14645f6160f35f43a57")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
 [assembly: System.Reflection.AssemblyProductAttribute("HpViagensApiCsharpe")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HpViagensApiCsharpe")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
