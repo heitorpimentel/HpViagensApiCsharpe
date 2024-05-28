@@ -27,9 +27,563 @@ dotnet run
 Para que o uso da api seja eficiente, será necesário cadastrar Cliente, Viagem, Pagamento e por último uma reserva, pois reserva contém os dados das 3 tabelas, não sendo possível cadastrar algum dado sem antes existir. </br>
 Poderá fazer uso da aplicação Next para o consumo desta API: [clique aqui para ver o repositório](https://github.com/heitorpimentel/hp-viagens-final.git)
 
-Para acessar o localhost da API use: https://localhost:7240/api/ -> Clientes, Pagamentos, Viagem ou Reservas e terá acesso aos dados cadastrados.
-## Modelagem do banco de dados
-### Modelo conceitual
-![image](https://github.com/heitorpimentel/HpViagensAPI/assets/130229709/dcd383a3-7d73-4d7f-8a3a-a9bb380bde1c)
-### Modelo lógico
-![image](https://github.com/heitorpimentel/HpViagensAPI/assets/130229709/17328a10-bcc2-405f-b70a-6057eaaed9c2)
+Para acessar o localhost da API use: https://localhost:<yourport>/api/ -> Clientes, Pagamentos, Viagem ou Reservas e terá acesso aos dados cadastrados.
+
+## Visão Geral
+
+### CLIENTES [/clientes]
+
+### 1. Listar Clientes
+
+**Rota:** `GET /clientes`
+
+**Descrição:** Retorna uma lista de todos os clientes.
+
+**Resposta:**
+
+- **Status:** 200 OK
+- **Corpo:**
+    ```json
+    [
+        {
+            "id": 1,
+            "nome": "Nome do Cliente",
+            "cpf": "000.000.000-00",
+            "sexo": "Sexo do Cliente",
+            "dataNascimento": "2023-05-24T00:00:00.000Z",
+            "telefone": "(00) 90000-0000",
+            "email": "email@email.com",
+            "senha": "Senha do Cliente"
+        }
+    ]
+    ```
+
+### 2. Criar Cliente
+
+**Rota:** `POST /clientes`
+
+**Descrição:** Cria um novo cliente.
+
+**Requisição:**
+
+- **Cabeçalhos:** `Content-Type: application/json`
+- **Corpo:**
+    ```json
+    {
+        "nome": "Nome do Cliente",
+        "cpf": "000.000.000-00",
+        "sexo": "Sexo do Cliente",
+        "dataNascimento": "2023-05-24T00:00:00.000Z",
+        "telefone": "(00) 90000-0000",
+        "email": "email@email.com",
+        "senha": "Senha do Cliente"
+    }
+    ```
+
+**Resposta:**
+
+- **Status:** 201 Created
+- **Corpo:**
+    ```json
+    {
+        "id": 1,
+        "nome": "Nome do Cliente",
+        "cpf": "000.000.000-00",
+        "sexo": "Sexo do Cliente",
+        "dataNascimento": "2023-05-24T00:00:00.000Z",
+        "telefone": "(00) 90000-0000",
+        "email": "email@email.com",
+        "senha": "Senha do Cliente"
+    }
+    ```
+
+### 3. Obter Detalhes de um Cliente
+
+**Rota:** `GET /clientes/{id}`
+
+**Descrição:** Retorna os detalhes de um cliente específico.
+
+**Parâmetros:**
+
+- `id` (obrigatório): ID do cliente
+
+**Resposta:**
+
+- **Status:** 200 OK
+- **Corpo:**
+    ```json
+    {
+        "id": 1,
+        "nome": "Nome do Cliente",
+        "cpf": "000.000.000-00",
+        "sexo": "Sexo do Cliente",
+        "dataNascimento": "2023-05-24T00:00:00.000Z",
+        "telefone": "(00) 90000-0000",
+        "email": "email@email.come",
+        "senha": "Senha do Cliente"
+    }
+    ```
+
+### 4. Atualizar Cliente
+
+**Rota:** `PUT /clientes/{id}`
+
+**Descrição:** Atualiza um cliente existente.
+
+**Parâmetros:**
+
+- `id` (obrigatório): ID do cliente
+
+**Requisição:**
+
+- **Cabeçalhos:** `Content-Type: application/json`
+- **Corpo:**
+    ```json
+    {
+        "nome": "Nome Atualizado",
+        "cpf": "000.000.000-00",
+        "sexo": "Sexo Atualizado",
+        "dataNascimento": "2023-05-24T00:00:00.000Z",
+        "telefone": "(00) 90000-0001",
+        "email": "email@email.com",
+        "senha": "Senha Atualizada"
+    }
+    ```
+
+**Resposta:**
+
+- **Status:** 200 OK
+- **Corpo:**
+    ```json
+    {
+        "id": 1,
+        "nome": "Nome Atualizado",
+        "cpf": "000.000.000-00",
+        "sexo": "Sexo Atualizado",
+        "dataNascimento": "2023-05-24T00:00:00.000Z",
+        "telefone": "(00) 90000-0001",
+        "email": "email@email.com",
+        "senha": "Senha Atualizada"
+    }
+    ```
+
+### 5. Excluir Cliente
+
+**Rota:** `DELETE /clientes/{id}`
+
+**Descrição:** Exclui um cliente.
+
+**Parâmetros:**
+
+- `id` (obrigatório): ID do cliente
+
+**Resposta:**
+
+- **Status:** 204 No Content
+
+### PAGAMENTOS [/pagamentos]
+
+### 1. Listar Pagamentos
+
+**Rota:** `GET /pagamentos`
+
+**Descrição:** Retorna uma lista de todos os pagamentos.
+
+**Resposta:**
+
+- **Status:** 200 OK
+- **Corpo:**
+    ```json
+    [
+        {
+            "id": 1,
+            "dataPagamento": "2023-05-24T00:00:00.000Z",
+            "valorPag": 100.00,
+            "formaPag": "Cartão",
+            "parcela": 1
+        }
+    ]
+    ```
+
+### 2. Criar Pagamento
+
+**Rota:** `POST /pagamentos`
+
+**Descrição:** Cria um novo pagamento.
+
+**Requisição:**
+
+- **Cabeçalhos:** `Content-Type: application/json`
+- **Corpo:**
+    ```json
+    {
+        "dataPagamento": "2023-05-24T00:00:00.000Z",
+        "valorPag": 100.00,
+        "formaPag": "Cartão",
+        "parcela": 1
+    }
+    ```
+
+**Resposta:**
+
+- **Status:** 201 Created
+- **Corpo:**
+    ```json
+    {
+        "id": 1,
+        "dataPagamento": "2023-05-24T00:00:00.000Z",
+        "valorPag": 100.00,
+        "formaPag": "Cartão",
+        "parcela": 1
+    }
+    ```
+
+### 3. Obter Detalhes de um Pagamento
+
+**Rota:** `GET /pagamentos/{id}`
+
+**Descrição:** Retorna os detalhes de um pagamento específico.
+
+**Parâmetros:**
+
+- `id` (obrigatório): ID do pagamento
+
+**Resposta:**
+
+- **Status:** 200 OK
+- **Corpo:**
+    ```json
+    {
+        "id": 1,
+        "dataPagamento": "2023-05-24T00:00:00.000Z",
+        "valorPag": 100.00,
+        "formaPag": "Cartão",
+        "parcela": 1
+    }
+    ```
+
+### 4. Atualizar Pagamento
+
+**Rota:** `PUT /pagamentos/{id}`
+
+**Descrição:** Atualiza um pagamento existente.
+
+**Parâmetros:**
+
+- `id` (obrigatório): ID do pagamento
+
+**Requisição:**
+
+- **Cabeçalhos:** `Content-Type: application/json`
+- **Corpo:**
+    ```json
+    {
+        "dataPagamento": "2023-05-24T00:00:00.000Z",
+        "valorPag": 150.00,
+        "formaPag": "Cartão",
+        "parcela": 2
+    }
+    ```
+
+**Resposta:**
+
+- **Status:** 200 OK
+- **Corpo:**
+    ```json
+    {
+        "id": 1,
+        "dataPagamento": "2023-05-24T00:00:00.000Z",
+        "valorPag": 150.00,
+        "formaPag": "Cartão",
+        "parcela": 2
+    }
+    ```
+
+### 5. Excluir Pagamento
+
+**Rota:** `DELETE /pagamentos/{id}`
+
+**Descrição:** Exclui um pagamento.
+
+**Parâmetros:**
+
+- `id` (obrigatório): ID do pagamento
+
+**Resposta:**
+
+- **Status:** 204 No Content
+
+### VIAGENS [/viagens]
+
+### 1. Listar Viagens
+
+**Rota:** `GET /viagens`
+
+**Descrição:** Retorna uma lista de todas as viagens.
+
+**Resposta:**
+
+- **Status:** 200 OK
+- **Corpo:**
+    ```json
+    [
+        {
+            "id": 1,
+            "origem": "Origem da Viagem",
+            "destino": "Destino da Viagem",
+            "dataIda": "2023-05-24T00:00:00.000Z",
+            "dataVolta": "2023-05-30T00:00:00.000Z"
+        }
+    ]
+    ```
+
+### 2. Criar Viagem
+
+**Rota:** `POST /viagens`
+
+**Descrição:** Cria uma nova viagem.
+
+**Requisição:**
+
+- **Cabeçalhos:** `Content-Type: application/json`
+- **Corpo:**
+    ```json
+    {
+        "origem": "Origem da Viagem",
+        "destino": "Destino da Viagem",
+        "dataIda": "2023-05-24T00:00:00.000Z",
+        "dataVolta": "2023-05-30T00:00:00.000Z"
+    }
+    ```
+
+**Resposta:**
+
+- **Status:** 201 Created
+- **Corpo:**
+    ```json
+    {
+        "id": 1,
+        "origem": "Origem da Viagem",
+        "destino": "Destino da Viagem",
+        "dataIda": "2023-05-24T00:00:00.000Z",
+        "dataVolta": "2023-05-30T00:00:00.000Z"
+    }
+    ```
+
+### 3. Obter Detalhes de uma Viagem
+
+**Rota:** `GET /viagens/{id}`
+
+**Descrição:** Retorna os detalhes de uma viagem específica.
+
+**Parâmetros:**
+
+- `id` (obrigatório): ID da viagem
+
+**Resposta:**
+
+- **Status:** 200 OK
+- **Corpo:**
+    ```json
+    {
+        "id": 1,
+        "origem": "Origem da Viagem",
+        "destino": "Destino da Viagem",
+        "dataIda": "2023-05-24T00:00:00.000Z",
+        "dataVolta": "2023-05-30T00:00:00.000Z"
+    }
+    ```
+
+### 4. Atualizar Viagem
+
+**Rota:** `PUT /viagens/{id}`
+
+**Descrição:** Atualiza uma viagem existente.
+
+**Parâmetros:**
+
+- `id` (obrigatório): ID da viagem
+
+**Requisição:**
+
+- **Cabeçalhos:** `Content-Type: application/json`
+- **Corpo:**
+    ```json
+    {
+        "origem": "Origem Atualizada",
+        "destino": "Destino Atualizado",
+        "dataIda": "2023-05-24T00:00:00.000Z",
+        "dataVolta": "2023-05-30T00:00:00.000Z"
+    }
+    ```
+
+**Resposta:**
+
+- **Status:** 200 OK
+- **Corpo:**
+    ```json
+    {
+        "id": 1,
+        "origem": "Origem Atualizada",
+        "destino": "Destino Atualizado",
+        "dataIda": "2023-05-24T00:00:00.000Z",
+        "dataVolta": "2023-05-30T00:00:00.000Z"
+    }
+    ```
+
+### 5. Excluir Viagem
+
+**Rota:** `DELETE /viagens/{id}`
+
+**Descrição:** Exclui uma viagem.
+
+**Parâmetros:**
+
+- `id` (obrigatório): ID da viagem
+
+**Resposta:**
+
+- **Status:** 204 No Content
+
+### RESERVAS [/reservas]
+
+### 1. Listar Reservas
+
+**Rota:** `GET /reservas`
+
+**Descrição:** Retorna uma lista de todas as reservas.
+
+**Resposta:**
+
+- **Status:** 200 OK
+- **Corpo:**
+    ```json
+    [
+        {
+            "id": 1,
+            "dataReserva": "2023-05-24T00:00:00.000Z",
+            "clienteId": 1,
+            "viagemId": 1,
+            "pagamentoId": 1
+        }
+    ]
+    ```
+
+### 2. Criar Reserva
+
+**Rota:** `POST /reservas`
+
+**Descrição:** Cria uma nova reserva.
+
+**Requisição:**
+
+- **Cabeçalhos:** `Content-Type: application/json`
+- **Corpo:**
+    ```json
+    {
+        "dataReserva": "2023-05-24T00:00:00.000Z",
+        "clienteId": 1,
+        "viagemId": 1,
+        "pagamentoId": 1
+    }
+    ```
+
+**Resposta:**
+
+- **Status:** 201 Created
+- **Corpo:**
+    ```json
+    {
+        "id": 1,
+        "dataReserva": "2023-05-24T00:00:00.000Z",
+        "clienteId": 1,
+        "viagemId": 1,
+        "pagamentoId": 1
+    }
+    ```
+
+### 3. Obter Detalhes de uma Reserva
+
+**Rota:** `GET /reservas/{id}`
+
+**Descrição:** Retorna os detalhes de uma reserva específica.
+
+**Parâmetros:**
+
+- `id` (obrigatório): ID da reserva
+
+**Resposta:**
+
+- **Status:** 200 OK
+- **Corpo:**
+    ```json
+    {
+        "id": 1,
+        "dataReserva": "2023-05-24T00:00:00.000Z",
+        "clienteId": 1,
+        "viagemId": 1,
+        "pagamentoId": 1
+    }
+    ```
+
+### 4. Atualizar Reserva
+
+**Rota:** `PUT /reservas/{id}`
+
+**Descrição:** Atualiza uma reserva existente.
+
+**Parâmetros:**
+
+- `id` (obrigatório): ID da reserva
+
+**Requisição:**
+
+- **Cabeçalhos:** `Content-Type: application/json`
+- **Corpo:**
+    ```json
+    {
+        "dataReserva": "2023-05-24T00:00:00.000Z",
+        "clienteId": 1,
+        "viagemId": 1,
+        "pagamentoId": 1
+    }
+    ```
+
+**Resposta:**
+
+- **Status:** 200 OK
+- **Corpo:**
+    ```json
+    {
+        "id": 1,
+        "dataReserva": "2023-05-24T00:00:00.000Z",
+        "clienteId": 1,
+        "viagemId": 1,
+        "pagamentoId": 1
+    }
+    ```
+
+### 5. Excluir Reserva
+
+**Rota:** `DELETE /reservas/{id}`
+
+**Descrição:** Exclui uma reserva.
+
+**Parâmetros:**
+
+- `id` (obrigatório): ID da reserva
+
+**Resposta:**
+
+- **Status:** 204 No Content
+
+## Erros
+
+### Estrutura de Erro
+
+**Exemplo de Resposta de Erro:**
+
+```json
+{
+    "error": "id não encontrado"
+}
