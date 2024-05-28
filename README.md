@@ -27,15 +27,15 @@ dotnet run
 Para que o uso da api seja eficiente, será necesário cadastrar Cliente, Viagem, Pagamento e por último uma reserva, pois reserva contém os dados das 3 tabelas, não sendo possível cadastrar algum dado sem antes existir. </br>
 Poderá fazer uso da aplicação Next para o consumo desta API: [clique aqui para ver o repositório](https://github.com/heitorpimentel/hp-viagens-final.git)
 
-Para acessar o localhost da API use: https://localhost:<yourport>/api/ -> Clientes, Pagamentos, Viagem ou Reservas e terá acesso aos dados cadastrados.
+Para acessar o localhost da API use:`` http://localhost:<yourport>/api/ ``-> Clientes, Pagamentos, Viagem ou Reservas e terá acesso aos dados cadastrados.
 
 ## Visão Geral
 
-### CLIENTES [/clientes]
+### CLIENTES [api/Clientes]
 
 ### 1. Listar Clientes
 
-**Rota:** `GET /clientes`
+**Rota:** `GET api/Clientes`
 
 **Descrição:** Retorna uma lista de todos os clientes.
 
@@ -60,7 +60,7 @@ Para acessar o localhost da API use: https://localhost:<yourport>/api/ -> Client
 
 ### 2. Criar Cliente
 
-**Rota:** `POST /clientes`
+**Rota:** `POST api/Clientes`
 
 **Descrição:** Cria um novo cliente.
 
@@ -99,7 +99,7 @@ Para acessar o localhost da API use: https://localhost:<yourport>/api/ -> Client
 
 ### 3. Obter Detalhes de um Cliente
 
-**Rota:** `GET /clientes/{id}`
+**Rota:** `GET api/Clientes/{id}`
 
 **Descrição:** Retorna os detalhes de um cliente específico.
 
@@ -126,7 +126,7 @@ Para acessar o localhost da API use: https://localhost:<yourport>/api/ -> Client
 
 ### 4. Atualizar Cliente
 
-**Rota:** `PUT /clientes/{id}`
+**Rota:** `PUT api/Clientes/{id}`
 
 **Descrição:** Atualiza um cliente existente.
 
@@ -169,7 +169,7 @@ Para acessar o localhost da API use: https://localhost:<yourport>/api/ -> Client
 
 ### 5. Excluir Cliente
 
-**Rota:** `DELETE /clientes/{id}`
+**Rota:** `DELETE api/Clientes/{id}`
 
 **Descrição:** Exclui um cliente.
 
@@ -181,11 +181,11 @@ Para acessar o localhost da API use: https://localhost:<yourport>/api/ -> Client
 
 - **Status:** 204 No Content
 
-### PAGAMENTOS [/pagamentos]
+### PAGAMENTOS [api/Pagamentos]
 
 ### 1. Listar Pagamentos
 
-**Rota:** `GET /pagamentos`
+**Rota:** `GET api/Pagamentos`
 
 **Descrição:** Retorna uma lista de todos os pagamentos.
 
@@ -207,7 +207,7 @@ Para acessar o localhost da API use: https://localhost:<yourport>/api/ -> Client
 
 ### 2. Criar Pagamento
 
-**Rota:** `POST /pagamentos`
+**Rota:** `POST api/Pagamentos`
 
 **Descrição:** Cria um novo pagamento.
 
@@ -240,7 +240,7 @@ Para acessar o localhost da API use: https://localhost:<yourport>/api/ -> Client
 
 ### 3. Obter Detalhes de um Pagamento
 
-**Rota:** `GET /pagamentos/{id}`
+**Rota:** `GET api/Pagamentos/{id}`
 
 **Descrição:** Retorna os detalhes de um pagamento específico.
 
@@ -264,7 +264,7 @@ Para acessar o localhost da API use: https://localhost:<yourport>/api/ -> Client
 
 ### 4. Atualizar Pagamento
 
-**Rota:** `PUT /pagamentos/{id}`
+**Rota:** `PUT api/Pagamentos/{id}`
 
 **Descrição:** Atualiza um pagamento existente.
 
@@ -301,7 +301,7 @@ Para acessar o localhost da API use: https://localhost:<yourport>/api/ -> Client
 
 ### 5. Excluir Pagamento
 
-**Rota:** `DELETE /pagamentos/{id}`
+**Rota:** `DELETE api/Pagamentos/{id}`
 
 **Descrição:** Exclui um pagamento.
 
@@ -313,11 +313,11 @@ Para acessar o localhost da API use: https://localhost:<yourport>/api/ -> Client
 
 - **Status:** 204 No Content
 
-### VIAGENS [/viagens]
+### VIAGENS [api/Viagem]
 
 ### 1. Listar Viagens
 
-**Rota:** `GET /viagens`
+**Rota:** `GET api/viagem`
 
 **Descrição:** Retorna uma lista de todas as viagens.
 
@@ -339,7 +339,7 @@ Para acessar o localhost da API use: https://localhost:<yourport>/api/ -> Client
 
 ### 2. Criar Viagem
 
-**Rota:** `POST /viagens`
+**Rota:** `POST api/viagem`
 
 **Descrição:** Cria uma nova viagem.
 
@@ -372,7 +372,7 @@ Para acessar o localhost da API use: https://localhost:<yourport>/api/ -> Client
 
 ### 3. Obter Detalhes de uma Viagem
 
-**Rota:** `GET /viagens/{id}`
+**Rota:** `GET api/viagem/{id}`
 
 **Descrição:** Retorna os detalhes de uma viagem específica.
 
@@ -396,7 +396,7 @@ Para acessar o localhost da API use: https://localhost:<yourport>/api/ -> Client
 
 ### 4. Atualizar Viagem
 
-**Rota:** `PUT /viagens/{id}`
+**Rota:** `PUT api/viagem/{id}`
 
 **Descrição:** Atualiza uma viagem existente.
 
@@ -433,7 +433,7 @@ Para acessar o localhost da API use: https://localhost:<yourport>/api/ -> Client
 
 ### 5. Excluir Viagem
 
-**Rota:** `DELETE /viagens/{id}`
+**Rota:** `DELETE api/viagem/{id}`
 
 **Descrição:** Exclui uma viagem.
 
@@ -445,11 +445,11 @@ Para acessar o localhost da API use: https://localhost:<yourport>/api/ -> Client
 
 - **Status:** 204 No Content
 
-### RESERVAS [/reservas]
+### RESERVAS [api/Reservas]
 
 ### 1. Listar Reservas
 
-**Rota:** `GET /reservas`
+**Rota:** `GET api/Reservas`
 
 **Descrição:** Retorna uma lista de todas as reservas.
 
@@ -471,7 +471,7 @@ Para acessar o localhost da API use: https://localhost:<yourport>/api/ -> Client
 
 ### 2. Criar Reserva
 
-**Rota:** `POST /reservas`
+**Rota:** `POST api/Reservas`
 
 **Descrição:** Cria uma nova reserva.
 
@@ -504,7 +504,7 @@ Para acessar o localhost da API use: https://localhost:<yourport>/api/ -> Client
 
 ### 3. Obter Detalhes de uma Reserva
 
-**Rota:** `GET /reservas/{id}`
+**Rota:** `GET api/Reservas/{id}`
 
 **Descrição:** Retorna os detalhes de uma reserva específica.
 
@@ -528,7 +528,7 @@ Para acessar o localhost da API use: https://localhost:<yourport>/api/ -> Client
 
 ### 4. Atualizar Reserva
 
-**Rota:** `PUT /reservas/{id}`
+**Rota:** `PUT api/Reservas/{id}`
 
 **Descrição:** Atualiza uma reserva existente.
 
@@ -565,7 +565,7 @@ Para acessar o localhost da API use: https://localhost:<yourport>/api/ -> Client
 
 ### 5. Excluir Reserva
 
-**Rota:** `DELETE /reservas/{id}`
+**Rota:** `DELETE api/Reservas/{id}`
 
 **Descrição:** Exclui uma reserva.
 
